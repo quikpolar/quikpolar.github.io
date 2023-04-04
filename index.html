@@ -16,25 +16,78 @@
         }
 
         body {
-            background-color: green;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
 
         h1 {
-            margin-left: 90px;
+            color: #772ee5;
+            font-size: 40px;
+            font-family: sans-serif;
+            animation: fadeIn 2s forwards;
+            position: relative;
+            text-align: center;
+            width: 100%;
         }
+        
+        h1.slide-up {
+            animation: slideUp 1s forwards;
+            margin-top: -50px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 40px;
+            font-family: sans-serif;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            top: 0px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                margin-top: 0;
+            }
+            to {
+                margin-top: -50px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 100;
+            }
+        }
+
     </style>
 </head>
 
 <body>
     <div class="center">
-        <h1>oi</h1>
+        <h1>Polar.</h1>
+        <h2 id="sub-title">Welcome</h2>
     </div>
 
     <script>
-        var widht = window.innerWidth;
-        document.write("Largura da tela:" + widht + "px")
-        var height = window.innerHeight;
-        document.write("A altura é: " + height)
+        const h1 = document.querySelector('h1');
+        h1.addEventListener('animationend', () => {
+            h1.classList.add('slide-up');
+        })
+
+        const h2 = document.querySelector('#sub-title');
+        setTimeout(() => {
+            h2.style.opacity = '1';
+        }, 6000)
     </script>
 </body>
 
