@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+.welcome {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.text {
+    color: #772ee5;
+    font-size: 26;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*animation: fadeIn 2s, slideUp 2s forwards;
+    animation-delay: 0s, 2s;*/
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 5px;
+}
+
+
+/*
+@keyframes fadeIn {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 80vh;
+    }
+}
+*/
