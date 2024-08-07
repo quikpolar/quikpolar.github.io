@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer namorar comigo?</title>
+</head>
+<body>
+    <h1>oi casa cmg</h1>
+    <button onclick="responder(1)">1. não</button>
+    <button onclick="responder(2)">2. sim</button>
+    <p id="resultado"></p>
+
+    <script>
+        function responder(opcao) {
+            const resultado = document.getElementById("resultado");
+
+            if (opcao === 1) {
+                resultado.textContent = "pensa dnv";
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+            } else if (opcao === 2) {
+                resultado.textContent = "Ebaaa, Eu te amo ❤";
+            } else {
+                resultado.textContent = "sim? Ebaaa, Eu te amo ❤";
+            }
+        }
+    </script>
+</body>
+</html>
