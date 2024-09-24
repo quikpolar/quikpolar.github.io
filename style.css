@@ -1,6 +1,12 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
     padding: 0;
     box-sizing: border-box;
 }
@@ -33,13 +39,14 @@ nav ul li a {
 }
 
 .logo {
-  max-width: 20%;
-  height: auto;
+    max-width: 20%;
+    height: auto;
 }
 
 .hero {
     color: black;
     text-align: center;
+    flex: 1; /* Adicionado para ocupar o espaço restante */
 }
 
 .hero h2 {
@@ -71,8 +78,6 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    bottom: 0;
 }
 
 form input, form textarea {
