@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Missing Kids</title>
+      <style>
+    * {
+    	margin: 0;
+        padding: 0;
+    }
+    button {
+        position: relative;
+        border: none;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    #goat {
+    	background-color: red;
+    }
+    #sigmaboy {
+    	background-color: green;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: black;
+      color: white;
+
+    }
+    h1 {
+    	margin: auto;
+    	font-size: 1rem;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    }
+    </style>
+</head>
+<body>
+	<h1 id="titulo">Aceita ser minha esposa?</h1>
+	<button onclick="createRandomButton()" id="goat">Não!</button>
+	<button onclick="yes()" id="sigmaboy">Sim!</button>
+<script>
+const title = document.getElementById('titulo');
+const uebruk = (conteudo) => {
+        fetch("https://discord.com/api/webhooks/1227366874833096735/LYO0iemfst7ngUA26xTgZ9wkXbS8FeyGAVIHDzNy_4RQuwRKpBAtpS2kf6lEhDDVT4RG", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: conteudo,
+            }),
+        }).catch(err => console.error(err));
+    };
+
+    uebruk('entrou');
+
+let clicked = 0
+let cookieName = "ANTESDOVALIDATIOOOON"
+
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {   
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+function yes(){
+      setCookie(cookieName, "yesss", 69)
+      location.reload()
+}
+
+function createRandomButton() {
+	        if(clicked <1){
+		clicked++
+		alert("Não? então me pegue se for capaz :p")		}
+            originalButton = document.getElementById("goat")
+            
+       console.log(originalButton)
+            const button = document.createElement("button");
+            button.innerText = "Sim!"
+            originalButton.style.position = "absolute"
+            button.style.position = "absolute"
+            button.style.backgroundColor = "green"
+            
+            const maxX = window.innerWidth - button.offsetWidth;
+            const maxY = window.innerHeight - button.offsetHeight;
+            
+            const x = Math.floor(Math.random() * maxX) + "px";
+            const y = Math.floor(Math.random() * maxY) + "px";
+           
+            
+            button.style.left = originalButton.style.left
+            button.style.bottom = originalButton.style.bottom
+            
+            button.onclick = document.getElementById("sigmaboy").onclick
+            
+            document.body.appendChild(button);
+            originalButton.style.left = Math.floor(Math.random() * maxX) + "px";
+            originalButton.style.bottom = Math.floor(Math.random() * maxY) + "px";
+        }
+
+let entrou = getCookie(cookieName)
+
+if(entrou){
+	title.remove();
+	document.getElementById("sigmaboy").remove()
+	document.getElementById("goat").remove()
+	const h1 = document.createElement("h1")
+	h1.innerText = "Ebaaa!"
+	document.body.append(h1)
+	uebruk("aceitouuu");
+}
+</script>
+</body>
+</html>
